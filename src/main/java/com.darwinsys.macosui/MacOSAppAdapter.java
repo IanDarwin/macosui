@@ -1,7 +1,10 @@
-package jabagator.swingui;
+package jabagator.macosui;
 
 import javax.swing.*;
 import com.apple.eawt.*;
+
+import jabagator.JabaGator;
+import jabagator.JBView;
 
 /**
  * Adapter class to handle MacOS's "different" way of doing About Box,
@@ -9,10 +12,12 @@ import com.apple.eawt.*;
  */
 public class MacOSAppHandler extends Application {
 	ApplicationAdapter handler;
+	JBView parent;
 
 	/** Construct a Handler given the JFrame parent */
-	public MacOSAppHandler(JFrame parent) {
+	public MacOSAppHandler(JBView parent) {
 		handler = new AppEventHandler(parent);
+		this.parent = parent;
 	}
 
 	/** Method to register this handler with Apple's event manager */
@@ -21,16 +26,16 @@ public class MacOSAppHandler extends Application {
 	}
 
 	class AppEventHandler extends ApplicationAdapter {
-		JFrame parent;
+		JBView parent;
 
 		/** Construct an AppEventHandler, given its parent JFrame */
-		AppEventHandler(JFrame parent) {
+		AppEventHandler(JBView parent) {
 			this.parent = parent;
 		}
 
 		/** This is called when the user does Application->About */
 		public void handleAbout(ApplicationEvent event) {
-			new AboutBox(parent).setVisible(true);
+			parent.showAboutBox();
 		}
 
 		/** Called when the user does Application->Preferences */
