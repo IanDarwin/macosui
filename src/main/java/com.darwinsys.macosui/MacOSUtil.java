@@ -1,4 +1,4 @@
-package com.darwinsys.swingui;
+package com.darwinsys.macosui;
 
 import java.awt.*;
 
