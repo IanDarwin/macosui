@@ -51,16 +51,20 @@ public class MacOSAppAdapter extends Application {
 
 		/** Called when the user does Application->Preferences */
 		public void handlePreferences(ApplicationEvent event) {
-			prefser.showPrefsDialog(parent);
+			if (prefser != null)
+				prefser.showPrefsDialog(parent);
 		}
 
 		public void handlePrint(ApplicationEvent event) {
-			printer.doPrint(parent);
+			if (printer != null)
+				printer.doPrint(parent);
 		}
 
 		/** This is called when the user does Application->Quit */
 		public void handleQuit(ApplicationEvent event) {
-			shutter.shutdown(parent);
+			if (shutter != null)
+				shutter.shutdown(parent);
+			System.exit(0);	// should be notreached
 		}
 	}
 }
