@@ -27,10 +27,10 @@ public class MacOSAppAdapter extends Application {
 	 * @param print A Print handler (bug: does not get invoked now).
 	 * @param shut A shutdown handler
 	 */
-	public MacOSAppAdapter(JFrame parent, AboutBoxHandler about,
+	public MacOSAppAdapter(JFrame theParent, AboutBoxHandler about,
 		PrefsHandler prefs, PrintHandler print, ShutdownHandler shut) {
 		appListener = new MyAppEventHandler();
-		this.parent = parent;
+		parent = theParent;
 
 		if (about != null) {
 			abouter = about;
