@@ -5,9 +5,11 @@ package com.darwinsys.macosui;
  */
 public class MacOSUtil {
 
-	/** Return true if we are running MacOS; needs a few GUI tweaks if so. */
+	/** Return true if we are running MacOS; need a few GUI tweaks if so.
+	 * See http://developer.apple.com/technotes/tn2002/tn2110.html.
+	 */
 	public static boolean isMacOS() {
-		return System.getProperty("mrj.version") != null;
+		return System.getProperty("os.name").toLowerCase().startsWith("mac os x");
 	}
 
 	/** Set a few common properties for the given application if
