@@ -16,8 +16,9 @@ public class MacOSUtil {
 	 * we are running under MacOS.
 	 * Usage Example:
 	 * <pre>
-	 *	if (UtilGUI.isMacOS()) {
-	 *		UtilGUI.setMacOS("JabaDex");
+	 *	if (MacOSUtil.isMacOS()) {
+	 *		MacOSUtil.setMacOS("JabaDex");
+	 *	}
 	 * </pre>
 	 * @param appName - the name of the Application.
 	 */
