@@ -49,7 +49,7 @@ public class MacOSUITest {
 		public void showAboutBox(JFrame jf) {
 			JOptionPane.showMessageDialog(
 				null,
-				"About Box",
+				"This is my About Box",
 				"About Box",
 				JOptionPane.INFORMATION_MESSAGE);
 
@@ -59,7 +59,7 @@ public class MacOSUITest {
 		public void showPrefsDialog(JFrame jf) {
 			JOptionPane.showMessageDialog(
 				null,
-				"Preferences Box",
+				"This is my Preferences Panel",
 				"Preferences Box",
 				JOptionPane.INFORMATION_MESSAGE);
 		};
@@ -77,7 +77,7 @@ public class MacOSUITest {
 		public void shutdown(JFrame jf) {
 			JOptionPane.showMessageDialog(
 				null,
-				"Shutdown",
+				"About to shut down the application",
 				"Shutdown",
 				JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
