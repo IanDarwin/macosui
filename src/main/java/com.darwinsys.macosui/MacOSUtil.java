@@ -23,6 +23,7 @@ public class MacOSUtil {
 	 */
 	public static void setMacOS(String appName) {
 		System.setProperty("apple.laf.useScreenMenuBar",  "true");
+		System.setProperty("apple.awt.showGrowBox",  "true");
 		System.setProperty("com.apple.mrj.application.apple.menu.about.name",
 			appName);
 	}
