@@ -19,7 +19,7 @@ public class MacOSUtil {
 	 *	if (UtilGUI.isMacOS()) {
 	 *		UtilGUI.setMacOS("JabaDex");
 	 * </pre>
-	 * @parameter appName - the name of the Application.
+	 * @param appName - the name of the Application.
 	 */
 	public static void setMacOS(String appName) {
 		System.setProperty("apple.laf.useScreenMenuBar",  "true");

@@ -3,28 +3,30 @@ package com.darwinsys.macosui;
 import javax.swing.*;
 import com.apple.eawt.*;
 
-import jabagator.JabaGator;
-import jabagator.JBView;
-
 /**
  * The only os-dependant part of com.darwinsys, this is the
  * adapter class to handle MacOS's "different" way of doing About Box,
  * Quit item in App menu, Preferences, and so on.
  */
-public class MacOSAppHandler extends Application {
+public class MacOSAppAdapter extends Application {
 	ApplicationAdapter appAdapter;
 	JFrame  parent;
 	AboutBoxHandler abouter;
 	PrefsHandler prefser;
+	PrintHandler printer;
 	ShutdownHandler shutter;
 
 	/** Construct a Handler given the JFrame parent */
-	public MacOSAppHandler(JFrame parent, AboutBoxHandler about,
-		PrefsHandler prefs, ShutdownHandler shut) {
-		appAdapter = new AppEventHandler(parent);
+	public MacOSAppAdapter(JFrame parent, AboutBoxHandler about,
+		PrefsHandler prefs, PrintHandler print, ShutdownHandler shut) {
+		appAdapter = new AppEventHandler();
 		this.parent = parent;
 		abouter = about;
 		prefser = prefs;
+		if (prefser != null) {
+			setEnabledPreferencesMenu(true);
+		}
+		printer = print;
 		shutter = shut;
 	}
 
@@ -32,7 +34,7 @@ public class MacOSAppHandler extends Application {
 	 * addApplicationListener in parent class.
 	 */
 	public void register() {
-		addApplicationListener(handler);
+		addApplicationListener(appAdapter);
 	}
 
 	class AppEventHandler extends ApplicationAdapter {
@@ -44,6 +46,7 @@ public class MacOSAppHandler extends Application {
 		/** This is called when the user does Application->About */
 		public void handleAbout(ApplicationEvent event) {
 			abouter.showAboutBox(parent);
+			// event.setIsHandled(true);
 		}
 
 		/** Called when the user does Application->Preferences */
@@ -51,9 +54,13 @@ public class MacOSAppHandler extends Application {
 			prefser.showPrefsDialog(parent);
 		}
 
+		public void handlePrint(ApplicationEvent event) {
+			printer.doPrint(parent);
+		}
+
 		/** This is called when the user does Application->Quit */
 		public void handleQuit(ApplicationEvent event) {
-			shutter.doShutdown(parent);
+			shutter.shutdown(parent);
 		}
 	}
 }
