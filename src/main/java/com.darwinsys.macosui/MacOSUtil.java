@@ -1,7 +1,5 @@
 package com.darwinsys.macosui;
 
-import java.awt.*;
-
 /** Utilities for GUI work.
  * @version $Id$
  */

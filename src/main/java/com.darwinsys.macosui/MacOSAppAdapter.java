@@ -1,7 +1,10 @@
 package com.darwinsys.macosui;
 
-import javax.swing.*;
-import com.apple.eawt.*;
+import javax.swing.JFrame;
+
+import com.apple.eawt.Application;
+import com.apple.eawt.ApplicationAdapter;
+import com.apple.eawt.ApplicationEvent;
 
 /**
  * The only os-dependant part of com.darwinsys, this is the
