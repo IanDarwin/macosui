@@ -15,14 +15,15 @@ import com.darwinsys.macosui.PrintHandler;
 import com.darwinsys.macosui.ShutdownHandler;
 
 /**
- * @author ian
- *
- * To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Generation - Code and Comments
+ * Interactive test for "macosui" package.
+ * Class can not extend JFrame; must invoke setMacOS() before first
+ * call to any Swing constructor.
+ * @version $Id$
  */
 public class MacOSUITest {
 
 	public static void main(String[] args) {
+		// Tester: check that this string appears in the Application Menu.
 		MacOSUtil.setMacOS("MacOSUITest");
 		new MacOSUITest();
 
@@ -37,6 +38,8 @@ public class MacOSUITest {
 			}
 		});
 		jf.getContentPane().add(button);
+		// Tester: see that Application->About produces our popup
+		// Ditto for Preferences and Shutdown.
 		MacOSAppAdapter adapter =
 			new MacOSAppAdapter(jf, abouter, prefser, printer, shutter);
 		adapter.register();
