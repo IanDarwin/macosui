@@ -21,7 +21,7 @@ public class MacOSAppAdapter extends Application {
 
 
 	/** Construct a MacOSAppAdapter.
-	 * @param parent A JFrame, usually the main application window.
+	 * @param theParent A JFrame, usually the main application window.
 	 * @param about A handler for the About box.
 	 * @param prefs A Preferences handler.
 	 * @param print A Print handler (bug: does not get invoked now).
@@ -56,6 +56,7 @@ public class MacOSAppAdapter extends Application {
 		addApplicationListener(appListener);
 	}
 
+	/** Inner class to provide ApplicationListener support. */
 	class MyAppEventHandler implements ApplicationListener {
 
 		/** This is called when the user does Application->About */
