@@ -25,7 +25,7 @@ public class MacOSAppAdapter extends Application {
 	 * @param about A handler for the About box.
 	 * @param prefs A Preferences handler.
 	 * @param print A Print handler (bug: does not get invoked now).
-	 * @param shutter A shutdown handler
+	 * @param shut A shutdown handler
 	 */
 	public MacOSAppAdapter(JFrame parent, AboutBoxHandler about,
 		PrefsHandler prefs, PrintHandler print, ShutdownHandler shut) {
