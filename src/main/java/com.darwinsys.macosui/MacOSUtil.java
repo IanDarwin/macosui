@@ -37,7 +37,7 @@ public class MacOSUtil {
 	/** Handle Apple's continuing failure to make their Java implementation's version
 	 * of Runtime.exec() match normal users' behaviour, that is, make Runtime.exec("Foo.app")
 	 * actually run "Foo".
-	 * @see java.lang.Runtime#exec()
+	 * @see java.lang.Runtime#exec(java.lang.String)
 	 * @param command The commands array
 	 * @return The newly-created Process
 	 * @throws IOException If anything goes wrong.
