@@ -1,4 +1,4 @@
-package com.darwinsys;
+package com.darwinsys.macosui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
