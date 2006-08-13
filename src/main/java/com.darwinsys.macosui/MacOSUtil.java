@@ -31,9 +31,9 @@ public class MacOSUtil {
 		System.setProperty("com.apple.mrj.application.apple.menu.about.name",
 			appName);
 	}
-	
+
 	private static Runtime theRuntime = Runtime.getRuntime();
-	
+
 	/** Handle Apple's continuing failure to make their Java implementation's version
 	 * of Runtime.exec() match normal users' behaviour, that is, make Runtime.exec("Foo.app")
 	 * actually run "Foo".
@@ -55,7 +55,8 @@ public class MacOSUtil {
 		    if (candidates.length != 1) {
 		        throw new IOException("Can't figure out which file to run");
 		    }
-		    theFile = new File(appDirectory, candidates[0].getName());
+		    // The following code was here but obviously does nothing:
+		    // theFile = new File(appDirectory, candidates[0].getName());
 		}
 		// now proceed with native exec
 		return theRuntime.exec(command);
