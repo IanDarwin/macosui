@@ -7,13 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import com.darwinsys.macosui.AboutBoxHandler;
-import com.darwinsys.macosui.MacOSAppAdapter;
-import com.darwinsys.macosui.MacOSUtil;
-import com.darwinsys.macosui.PrefsHandler;
-import com.darwinsys.macosui.PrintHandler;
-import com.darwinsys.macosui.ShutdownHandler;
-
 /**
  * Interactive test for "macosui" package.
  * Class can not extend JFrame; must invoke setMacOS() before first
